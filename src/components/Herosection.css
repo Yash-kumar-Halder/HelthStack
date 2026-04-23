@@ -1,0 +1,125 @@
+/* Hero Section */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 60px 80px;
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #eef2ff, #f8fbff);
+    border-radius: 0 0 40px 40px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Soft background glow (medical feel) */
+.hero::before {
+    content: '';
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: rgba(90, 103, 216, 0.15);
+    border-radius: 50%;
+    top: -100px;
+    right: -100px;
+    filter: blur(120px);
+}
+
+/* Text Section */
+.hero-text {
+    flex: 1;
+    max-width: 550px;
+    z-index: 2;
+}
+
+.hero-text h1 {
+    font-size: 52px;
+    color: #1a202c;
+    line-height: 1.2;
+    font-weight: 700;
+}
+
+.hero-text span {
+    color: #5a67d8;
+}
+
+/* Paragraph */
+.hero-text p {
+    margin: 20px 0;
+    font-size: 16px;
+    color: #4a5568;
+    line-height: 1.6;
+}
+
+/* Button */
+.download-btn {
+    background: linear-gradient(135deg, #5a67d8, #7f9cf5);
+    color: white;
+    padding: 12px 26px;
+    border: none;
+    border-radius: 30px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.download-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(90, 103, 216, 0.3);
+}
+
+/* Image Section */
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    height: 100%;
+    position: relative;
+    z-index: 2;
+}
+
+.hero-image::before {
+    content: '';
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background: rgba(90, 103, 216, 0.2);
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    filter: blur(100px);
+    z-index: -1;
+}
+
+/* BIG doctor image (bg removed) */
+.hero-image img {
+    width: 1500px;
+    max-width: 100%;
+    object-fit: contain;
+
+    filter: drop-shadow(0 30px 60px rgba(0, 0, 0, 0.25));
+
+    transform: translateY(10px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        padding: 40px 20px;
+        text-align: center;
+    }
+
+    .hero-text h1 {
+        font-size: 36px;
+    }
+
+    .hero-image img {
+        width: 380px;
+        margin-top: 30px;
+    }
+}

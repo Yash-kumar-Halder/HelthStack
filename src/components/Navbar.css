@@ -1,0 +1,112 @@
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 70px;
+    backdrop-filter: blur(12px);
+    top: 0;
+    z-index: 1000;
+    transition: 0.3s ease;
+    background: transparent;
+    box-shadow: none;
+    position: absolute;
+    width: 100%;
+}
+
+/* Logo */
+.logo {
+    font-size: 26px;
+    font-weight: 700;
+    color: #5a67d8;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.logo:hover {
+    transform: scale(1.05);
+}
+
+/* Nav */
+.navbar nav {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Nav Links */
+.navbar nav a {
+    padding: 8px 12px;
+    text-decoration: none;
+    color: #2d3748;
+    font-size: 15px;
+    font-weight: 500;
+    position: relative;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+/* Hover background */
+.navbar nav a:hover {
+    background: rgba(90, 103, 216, 0.08);
+    color: #5a67d8;
+}
+
+/* Underline animation */
+.navbar nav a::after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    bottom: -3px;
+    left: 0;
+    background: linear-gradient(135deg, #5a67d8, #7f9cf5);
+    transition: 0.3s;
+}
+
+.navbar nav a:hover::after {
+    width: 100%;
+}
+
+/* Button */
+.btn {
+    background: linear-gradient(135deg, #5a67d8, #7f9cf5);
+    color: white;
+    border: none;
+    padding: 10px 22px;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Button hover */
+.btn:hover {
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 10px 25px rgba(90, 103, 216, 0.35);
+}
+
+/* Active link (future use) */
+.navbar nav a.active {
+    color: #5a67d8;
+    font-weight: 600;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 15px 20px;
+    }
+
+    .navbar nav {
+        display: none;
+        /* later hamburger add korbo */
+    }
+
+    .btn {
+        padding: 8px 14px;
+        font-size: 13px;
+    }
+}

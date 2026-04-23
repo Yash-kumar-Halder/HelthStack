@@ -1,0 +1,56 @@
+.services {
+    display: flex;
+    gap: 50px;
+    padding: 80px 90px;
+    background: #f7f9fc;
+}
+
+/* LEFT */
+.services-left {
+    flex: 1;
+}
+
+.services-left h2 {
+    font-size: 34px;
+    color: #1f2d3d;
+    margin-bottom: 12px;
+}
+
+.services-left p {
+    font-size: 15px;
+    color: #5b6b7a;
+    line-height: 1.7;
+}
+
+/* RIGHT */
+.services-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* SERVICE ITEM (MATCHING JSX) */
+.service-item {
+    width: 100%;
+    padding: 18px 20px;
+    background: #ffffff;
+    border: 1px solid #e5ecf7;
+    border-radius: 10px;
+
+    font-size: 16px;
+    font-weight: 500;
+    color: #2c3e50;
+
+    cursor: pointer;
+    text-align: left;
+
+    transition: all 0.2s ease;
+}
+
+/* HOVER */
+.service-item:hover {
+    background: #eaf3ff;
+    transform: translateX(5px);
+    border-color: #4a90e2;
+}
