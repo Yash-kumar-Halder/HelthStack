@@ -33,4 +33,10 @@ export default defineConfig([
             'prettier/prettier': 'error', // ✅ show prettier issues as ESLint errors
         },
     },
+    {
+        files: ['src/components/ui/**/*.{js,jsx}'],
+        rules: {
+            'react-refresh/only-export-components': 'off',
+        },
+    },
 ]);
