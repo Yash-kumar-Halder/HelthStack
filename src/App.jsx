@@ -5,6 +5,8 @@ import './App.css';
 import Landing from './pages/landing';
 import About from './pages/about';
 import LoginUI from './pages/loginUI';
+import SignupPage from './pages/sign-up';
+import Contact from './pages/contact';
 
 function App() {
     return (
@@ -12,6 +14,8 @@ function App() {
             <Landing />
             <About />
             <LoginUI />
+            <SignupPage />
+            <Contact />
         </>
     );
 }
