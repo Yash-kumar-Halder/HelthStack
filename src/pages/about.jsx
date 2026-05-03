@@ -2,9 +2,9 @@ import React from 'react';
 
 const About = () => {
     return (
-        <div className="bg-gray-100 min-h-screen py-12 px-6">
+        <div className="bg-neutral-100 min-h-screen py-12 px-6">
             {/* Heading Section */}
-            <div className="max-w-6xl mx-auto mb-12">
+            <div className="w-2/3 mx-auto mb-12">
                 <h1 className="text-4xl md:text-5xl font-bold text-gray-800 leading-tight">
                     Built on Care, Driven by People,
                     <br />
@@ -13,41 +13,41 @@ const About = () => {
             </div>
 
             {/* Content Section */}
-            <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-6 mt-10">
+            <div className="w-2/3 mx-auto grid md:grid-cols-3 gap-6 mt-10">
                 {/* Card */}
-                <div className="bg-blue-600 text-white p-8 rounded-2xl shadow-lg">
+                <div className="bg-blue-600 text-white px-5 py-3 rounded-lg shadow-lg flex flex-col justify-end min-h-38">
                     <h2 className="text-4xl font-bold">10+</h2>
-                    <p className="mt-2 text-lg">AI based Technology</p>
+                    <p className="text-xl">AI based Technology</p>
                 </div>
 
                 {/* Card */}
-                <div className="bg-gradient-to-r from-purple-600 to-pink-500 text-white p-8 rounded-2xl shadow-lg">
+                <div className="bg-linear-to-r from-purple-600 to-pink-500 text-white px-5 py-3 rounded-lg shadow-lg flex flex-col justify-end min-h-38">
                     <h2 className="text-4xl font-bold">5+</h2>
-                    <p className="mt-2 text-lg">Modern Technologies</p>
+                    <p className="text-xl">Modern Technologies</p>
                 </div>
 
                 {/* Card */}
-                <div className="bg-indigo-500 text-white p-8 rounded-2xl shadow-lg">
+                <div className="bg-indigo-500 text-white px-5 py-3 rounded-lg shadow-lg flex flex-col justify-end min-h-38">
                     <h2 className="text-4xl font-bold">200+</h2>
-                    <p className="mt-2 text-lg">Medical Staff</p>
+                    <p className="text-xl">Medical Staff</p>
                 </div>
 
                 {/* Card */}
-                <div className="bg-purple-500 text-white p-8 rounded-2xl shadow-lg">
+                <div className="bg-purple-500 text-white px-5 py-3 rounded-lg shadow-lg flex flex-col justify-end min-h-38">
                     <h2 className="text-4xl font-bold">5000+</h2>
-                    <p className="mt-2 text-lg">Patients Served</p>
+                    <p className="text-xl">Patients Served</p>
                 </div>
 
                 {/* Card */}
-                <div className="bg-blue-500 text-white p-8 rounded-2xl shadow-lg">
+                <div className="bg-blue-500 text-white px-5 py-3 rounded-lg shadow-lg flex flex-col justify-end min-h-38">
                     <h2 className="text-4xl font-bold">24x7</h2>
-                    <p className="mt-2 text-lg">Services</p>
+                    <p className="text-xl">Services</p>
                 </div>
 
                 {/* Card */}
-                <div className="bg-blue-700 text-white p-8 rounded-2xl shadow-lg">
+                <div className="bg-blue-700 text-white px-5 py-3 rounded-lg shadow-lg flex flex-col justify-end min-h-38">
                     <h2 className="text-4xl font-bold">1M+</h2>
-                    <p className="mt-2 text-lg">Happy Patients</p>
+                    <p className="text-xl">Happy Patients</p>
                 </div>
             </div>
 

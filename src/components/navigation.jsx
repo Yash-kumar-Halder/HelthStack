@@ -10,6 +10,7 @@ import {
     navigationMenuTriggerStyle,
 } from '@/components/ui/navigation-menu';
 import { Hospital } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const components = [
     {
@@ -51,13 +52,13 @@ const components = [
 const Navigation = () => {
     return (
         <div className="w-2/3 h-10 fixed z-99 left-1/2 top-1.5 -translate-x-1/2 flex items-center justify-between ">
-            <a
-                href="/"
+            <Link
+                to="/"
                 className="flex items-center gap-2"
             >
                 <Hospital size={18} />
                 <h1 className="text-base font-semibold">HelthStack</h1>
-            </a>
+            </Link>
             <div>
                 <NavigationMenu>
                     <NavigationMenuList>
@@ -107,13 +108,21 @@ const Navigation = () => {
                                 asChild
                                 className={navigationMenuTriggerStyle()}
                             >
-                                <a href="/docs">Docs</a>
+                                <Link to="/docs">Doc</Link>
+                            </NavigationMenuLink>
+                            <NavigationMenuLink
+                                asChild
+                                className={navigationMenuTriggerStyle()}
+                            >
+                                <Link to="/about">About</Link>
                             </NavigationMenuLink>
                         </NavigationMenuItem>
                     </NavigationMenuList>
                 </NavigationMenu>
             </div>
-            <Button className="text-sm px-4 py-1.5 h-fit hover:bg-neutral-700">Login</Button>
+            <Link to="/login">
+                <Button className="text-sm px-4 py-1.5 h-fit hover:bg-neutral-700">Login</Button>
+            </Link>
         </div>
     );
 };
@@ -122,12 +131,12 @@ function ListItem({ title, children, href, ...props }) {
     return (
         <li {...props}>
             <NavigationMenuLink asChild>
-                <a href={href}>
+                <Link to={href}>
                     <div className="flex flex-col gap-1 text-sm">
                         <div className="leading-none font-medium">{title}</div>
                         <div className="line-clamp-2 text-muted-foreground">{children}</div>
                     </div>
-                </a>
+                </Link>
             </NavigationMenuLink>
         </li>
     );
