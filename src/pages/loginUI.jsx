@@ -94,6 +94,15 @@ const LoginUI = () => {
                             <button className="w-full bg-teal-500 text-white py-4 rounded-lg text-lg font-semibold hover:bg-teal-600">
                                 Login
                             </button>
+                            <p className="text-center mt-6 text-gray-500 text-sm">
+                                Don't have an account?{' '}
+                                <a
+                                    href="#"
+                                    className="text-teal-600 font-semibold hover:text-teal-700 hover:underline transition duration-200"
+                                >
+                                    Sign Up
+                                </a>
+                            </p>
                         </div>
                     </div>
                 </div>
