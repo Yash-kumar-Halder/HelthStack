@@ -2,7 +2,7 @@ import React from 'react';
 
 const LoginUI = () => {
     return (
-        <div className="min-h-screen bg-gradient-to-r from-cyan-500 to-teal-500 flex items-center justify-center p-8">
+        <div className="min-h-screen bg-linear-to-r from-cyan-500 to-teal-500 flex items-center justify-center p-8">
             <div className="w-full max-w-7xl flex gap-10 items-center">
                 {/* Left Side */}
                 <div className="text-white w-1/4">
