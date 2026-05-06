@@ -1,5 +1,6 @@
 import { assets } from '@/assets/assets';
 import React from 'react';
+import { Phone, MapPin, Clock } from 'lucide-react';
 
 const Contact = () => {
     return (

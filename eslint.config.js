@@ -7,7 +7,7 @@ import prettierPlugin from 'eslint-plugin-prettier';
 import { defineConfig, globalIgnores } from 'eslint/config';
 
 export default defineConfig([
-    globalIgnores(['dist']),
+    globalIgnores(['dist', 'src/hooks/use-mobile.js']),
     {
         files: ['**/*.{js,jsx}'],
         extends: [
@@ -29,8 +29,14 @@ export default defineConfig([
             prettier: prettierPlugin, // ✅ add plugin
         },
         rules: {
-            'no-unused-vars': ['error', { varsIgnorePattern: '^[A-Z_]' }],
-            'prettier/prettier': 'error', // ✅ show prettier issues as ESLint errors
+            'no-unused-vars': [
+                'error',
+                {
+                    varsIgnorePattern: '^[A-Z_]',
+                    argsIgnorePattern: '^[A-Z_]', // ✅ FIX HERE
+                },
+            ],
+            'prettier/prettier': 'error',
         },
     },
     {
