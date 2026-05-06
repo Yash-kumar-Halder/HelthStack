@@ -10,44 +10,44 @@ import useLenisScroll from './lib/lenis';
 
 import { Route, Routes } from 'react-router-dom';
 
-import AuthProvider from './providers/auth.provider';
 import DashboardLayout from './layouts/dashboard-layout';
 import HomeLayout from './layouts/home-layout';
 import Home from './pages/home';
 import Navigation from './components/navigation';
+import ProtectedLayout from './layouts/protected-layout';
 
 function App() {
     useLenisScroll();
 
     return (
-        <AuthProvider>
-            <Routes>
-                <Route element={<Navigation />}>
-                    <Route
-                        index
-                        element={<Landing />}
-                    />
+        <Routes>
+            <Route element={<Navigation />}>
+                <Route
+                    index
+                    element={<Landing />}
+                />
 
-                    <Route
-                        path="/login"
-                        element={<LoginUI />}
-                    />
+                <Route
+                    path="/login"
+                    element={<LoginUI />}
+                />
 
-                    <Route
-                        path="/about"
-                        element={<About />}
-                    />
+                <Route
+                    path="/about"
+                    element={<About />}
+                />
 
-                    <Route
-                        path="/contact"
-                        element={<Contact />}
-                    />
+                <Route
+                    path="/contact"
+                    element={<Contact />}
+                />
 
-                    <Route
-                        path="/sign-up"
-                        element={<SignupPage />}
-                    />
+                <Route
+                    path="/sign-up"
+                    element={<SignupPage />}
+                />
 
+                <Route element={<ProtectedLayout />}>
                     <Route element={<DashboardLayout />}>
                         <Route
                             path="/dashboard"
@@ -61,8 +61,8 @@ function App() {
                         />
                     </Route>
                 </Route>
-            </Routes>
-        </AuthProvider>
+            </Route>
+        </Routes>
     );
 }
 
