@@ -3,9 +3,9 @@ import React from 'react';
 
 const Card = ({ Icon, paraText }) => {
     return (
-        <div className="bg-amber-600/30 p-4 flex flex-col gap-8 rounded-lg shadow-md shadow-neutral-400">
+        <div className="bg-amber-600/35 p-4 flex flex-col gap-8 rounded-lg shadow-md shadow-neutral-400">
             <Icon
-                className="bg-black p-1 rounded-sm w-fit"
+                className="bg-amber-800 p-1 rounded-sm w-fit"
                 fill="#fff"
                 stroke="#0000"
             />
@@ -16,7 +16,7 @@ const Card = ({ Icon, paraText }) => {
 
 const Feature = () => {
     return (
-        <section className="relative min-h-screen py-12 flex flex-col items-center bg-amber-950/10">
+        <section className="relative min-h-screen py-12 flex flex-col items-center bg-amber-800/20">
             {/* TOP FADE */}
             <div className="absolute top-0 left-0 w-full h-32 bg-linear-to-t from-transparent to-white"></div>
 

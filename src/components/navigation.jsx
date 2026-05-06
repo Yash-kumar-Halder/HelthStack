@@ -10,9 +10,11 @@ import {
     navigationMenuTriggerStyle,
 } from '@/components/ui/navigation-menu';
 import { Hospital } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, Outlet } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import ProfileIconBadge from './profile-icon-badge';
 
-const components = [
+const services = [
     {
         title: 'Alert Dialog',
         href: '/docs/primitives/alert-dialog',
@@ -20,8 +22,8 @@ const components = [
             'A modal dialog that interrupts the user with important content and expects a response.',
     },
     {
-        title: 'Hover Card',
-        href: '/docs/primitives/hover-card',
+        title: 'Patient Medical History',
+        href: '/patient/hostory',
         description: 'For sighted users to preview content available behind a link.',
     },
     {
@@ -50,80 +52,100 @@ const components = [
 ];
 
 const Navigation = () => {
+    const { isAuthenticated } = useSelector((state) => state.auth);
+
     return (
-        <div className="w-2/3 h-10 fixed z-99 left-1/2 top-1.5 -translate-x-1/2 flex items-center justify-between ">
-            <Link
-                to="/"
-                className="flex items-center gap-2"
-            >
-                <Hospital size={18} />
-                <h1 className="text-base font-semibold">HelthStack</h1>
-            </Link>
-            <div>
-                <NavigationMenu>
-                    <NavigationMenuList>
-                        <NavigationMenuItem>
-                            <NavigationMenuTrigger>Getting started</NavigationMenuTrigger>
-                            <NavigationMenuContent>
-                                <ul className="w-96">
-                                    <ListItem
-                                        href="/docs"
-                                        title="Introduction"
-                                    >
-                                        Re-usable components built with Tailwind CSS.
-                                    </ListItem>
-                                    <ListItem
-                                        href="/docs/installation"
-                                        title="Installation"
-                                    >
-                                        How to install dependencies and structure your app.
-                                    </ListItem>
-                                    <ListItem
-                                        href="/docs/primitives/typography"
-                                        title="Typography"
-                                    >
-                                        Styles for headings, paragraphs, lists...etc
-                                    </ListItem>
-                                </ul>
-                            </NavigationMenuContent>
-                        </NavigationMenuItem>
-                        <NavigationMenuItem className="hidden md:flex">
-                            <NavigationMenuTrigger>Components</NavigationMenuTrigger>
-                            <NavigationMenuContent>
-                                <ul className="grid w-100 gap-2 md:w-125 md:grid-cols-2 lg:w-150">
-                                    {components.map((component) => (
+        <>
+            <div className="w-2/3 h-10 fixed z-99 left-1/2 top-1.5 -translate-x-1/2 flex items-center justify-between ">
+                <Link
+                    to="/"
+                    className="flex items-center gap-2"
+                >
+                    <Hospital size={18} />
+                    <h1 className="text-base font-semibold">HelthStack</h1>
+                </Link>
+                <div>
+                    <NavigationMenu>
+                        <NavigationMenuList>
+                            <NavigationMenuItem>
+                                <NavigationMenuTrigger>Getting started</NavigationMenuTrigger>
+                                <NavigationMenuContent>
+                                    <ul className="w-96">
                                         <ListItem
-                                            key={component.title}
-                                            title={component.title}
-                                            href={component.href}
+                                            href="/docs"
+                                            title="Introduction"
                                         >
-                                            {component.description}
+                                            Re-usable components built with Tailwind CSS.
                                         </ListItem>
-                                    ))}
-                                </ul>
-                            </NavigationMenuContent>
-                        </NavigationMenuItem>
-                        <NavigationMenuItem>
-                            <NavigationMenuLink
-                                asChild
-                                className={navigationMenuTriggerStyle()}
+                                        <ListItem
+                                            href="/docs/installation"
+                                            title="Installation"
+                                        >
+                                            How to install dependencies and structure your app.
+                                        </ListItem>
+                                        <ListItem
+                                            href="/docs/primitives/typography"
+                                            title="Typography"
+                                        >
+                                            Styles for headings, paragraphs, lists...etc
+                                        </ListItem>
+                                    </ul>
+                                </NavigationMenuContent>
+                            </NavigationMenuItem>
+                            <NavigationMenuItem className="hidden md:flex">
+                                <NavigationMenuTrigger>Services</NavigationMenuTrigger>
+                                <NavigationMenuContent>
+                                    <ul className="grid w-100 gap-2 md:w-125 md:grid-cols-2 lg:w-150">
+                                        {services.map((component) => (
+                                            <ListItem
+                                                key={component.title}
+                                                title={component.title}
+                                                href={component.href}
+                                            >
+                                                {component.description}
+                                            </ListItem>
+                                        ))}
+                                    </ul>
+                                </NavigationMenuContent>
+                            </NavigationMenuItem>
+                            <NavigationMenuItem>
+                                <NavigationMenuLink
+                                    asChild
+                                    className={navigationMenuTriggerStyle()}
+                                >
+                                    <Link to="/docs">Doc</Link>
+                                </NavigationMenuLink>
+                                <NavigationMenuLink
+                                    asChild
+                                    className={navigationMenuTriggerStyle()}
+                                >
+                                    <Link to="/about">About</Link>
+                                </NavigationMenuLink>
+                            </NavigationMenuItem>
+                        </NavigationMenuList>
+                    </NavigationMenu>
+                </div>
+                {!isAuthenticated && (
+                    <div className="flex gap-3 items-center">
+                        <Link to="/login">
+                            <Button className="text-sm px-4 py-1.5 h-fit hover:bg-neutral-700">
+                                Login
+                            </Button>
+                        </Link>
+                        <Link to="/sign-up">
+                            <Button
+                                variant="secondary"
+                                className="text-sm px-4 py-1.5 h-fit shadow-md border border-neutral-300 hover:shadow hover:border-neutral-400 "
                             >
-                                <Link to="/docs">Doc</Link>
-                            </NavigationMenuLink>
-                            <NavigationMenuLink
-                                asChild
-                                className={navigationMenuTriggerStyle()}
-                            >
-                                <Link to="/about">About</Link>
-                            </NavigationMenuLink>
-                        </NavigationMenuItem>
-                    </NavigationMenuList>
-                </NavigationMenu>
+                                Sign Up
+                            </Button>
+                        </Link>
+                    </div>
+                )}
+                <ProfileIconBadge />
             </div>
-            <Link to="/login">
-                <Button className="text-sm px-4 py-1.5 h-fit hover:bg-neutral-700">Login</Button>
-            </Link>
-        </div>
+            <Outlet />
+        </>
     );
 };
 

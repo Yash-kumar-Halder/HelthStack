@@ -1,3 +1,4 @@
+import LoginForm from '@/components/login-form';
 import React from 'react';
 
 const LoginUI = () => {
@@ -31,79 +32,7 @@ const LoginUI = () => {
                         </div>
 
                         {/* Login Form */}
-                        <div className="w-1/2 p-14">
-                            <h2 className="text-4xl font-semibold text-gray-800">Welcome to</h2>
-                            <h1 className="text-5xl font-bold text-teal-500 mb-3">HelthStack</h1>
-                            <p className="text-gray-500 mb-8 font-bold">
-                                Please login here to access
-                            </p>
-
-                            <button className="w-full border rounded-lg py-4 mb-4 shadow-sm">
-                                Login with Google
-                            </button>
-
-                            <button className="w-full border rounded-lg py-4 mb-6 shadow-sm">
-                                Login with Facebook
-                            </button>
-
-                            <div className="flex items-center gap-4 mb-6">
-                                <hr className="flex-1" />
-                                <span className="text-gray-400">OR</span>
-                                <hr className="flex-1" />
-                            </div>
-
-                            {/* Email */}
-                            <div className="flex items-center border rounded-lg px-4 py-4 mb-4">
-                                <span className="mr-3">📧</span>
-                                <input
-                                    type="email"
-                                    placeholder="example@email.com"
-                                    className="outline-none w-full"
-                                />
-                            </div>
-
-                            {/* Password */}
-                            <div className="flex items-center border rounded-lg px-4 py-4 mb-4">
-                                <span className="mr-3">🔒</span>
-                                <input
-                                    type="password"
-                                    placeholder="Password"
-                                    className="outline-none w-full"
-                                />
-                                <span>
-                                    <a href="#">👁️</a>
-                                </span>
-                            </div>
-
-                            <div className="flex justify-between text-sm text-gray-500 mb-6">
-                                <label>
-                                    <input
-                                        type="checkbox"
-                                        className="mr-2"
-                                    />
-                                    Remember me
-                                </label>
-                                <a
-                                    href="#"
-                                    className="text-teal-500"
-                                >
-                                    Forgot Password?
-                                </a>
-                            </div>
-
-                            <button className="w-full bg-teal-500 text-white py-4 rounded-lg text-lg font-semibold hover:bg-teal-600">
-                                Login
-                            </button>
-                            <p className="text-center mt-6 text-gray-500 text-sm">
-                                Don't have an account?{' '}
-                                <a
-                                    href="#"
-                                    className="text-teal-600 font-semibold hover:text-teal-700 hover:underline transition duration-200"
-                                >
-                                    Sign Up
-                                </a>
-                            </p>
-                        </div>
+                        <LoginForm />
                     </div>
                 </div>
             </div>

@@ -1,10 +1,10 @@
 import { Button } from './ui/button';
 import LightBG from '../assets/light-bg.jpg';
 
-const Home = () => {
+const HeroLanding = () => {
     return (
         <div
-            className="relative w-full min-h-screen bg-cover py-10"
+            className="relative w-full min-h-screen bg-cover py-10 pb-20"
             style={{ backgroundImage: `url(${LightBG})` }}
         >
             {/* content */}
@@ -32,8 +32,9 @@ const Home = () => {
                     <div className="w-8/9 min-h-[55vh] border border-amber-700 rounded-xl mt-20 mb-10"></div>
                 </section>
             </div>
+            <div className="absolute bottom-0 left-0 w-full h-32 bg-linear-to-t from-white/80 to-transparent"></div>
         </div>
     );
 };
 
-export default Home;
+export default HeroLanding;
