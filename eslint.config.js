@@ -7,7 +7,7 @@ import prettierPlugin from 'eslint-plugin-prettier';
 import { defineConfig, globalIgnores } from 'eslint/config';
 
 export default defineConfig([
-    globalIgnores(['dist', 'src/hooks/use-mobile.js']),
+    globalIgnores(['dist', 'src/components/ui/**/*', 'src/hooks/use-mobile.js']),
     {
         files: ['**/*.{js,jsx}'],
         extends: [

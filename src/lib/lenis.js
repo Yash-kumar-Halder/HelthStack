@@ -6,6 +6,11 @@ export default function useLenisScroll() {
         const lenis = new Lenis({
             duration: 1.2,
             smoothWheel: true,
+
+            // Prevent Lenis from hijacking nested scroll containers
+            prevent: (node) => {
+                return node.closest('[data-lenis-prevent]');
+            },
         });
 
         function raf(time) {
