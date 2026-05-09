@@ -5,6 +5,8 @@ node_modules/
 bower_components/
 jspm_packages/
 
+src/components/ui/
+
 # ================================
 # Build outputs
 # ================================
