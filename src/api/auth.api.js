@@ -34,3 +34,13 @@ export const refreshAuth = async () => {
 
     return response.data;
 };
+
+export const fetchUser = async (data) => {
+    const response = await api.post('/auth/login', data);
+
+    const accessToken = response.data.data.accessToken;
+
+    tokenService.setAccessToken(accessToken || null);
+
+    return response.data;
+};
